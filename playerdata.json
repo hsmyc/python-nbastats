@@ -1,18 +1,18 @@
 {
-    "first_name": "LeBron",
-    "height_feet": 6,
-    "height_inches": 8,
-    "id": 237,
-    "last_name": "James",
-    "position": "F",
+    "first_name": "Alperen",
+    "height_feet": null,
+    "height_inches": null,
+    "id": 17896062,
+    "last_name": "Sengun",
+    "position": "F-C",
     "team": {
-        "abbreviation": "LAL",
-        "city": "Los Angeles",
+        "abbreviation": "HOU",
+        "city": "Houston",
         "conference": "West",
-        "division": "Pacific",
-        "full_name": "Los Angeles Lakers",
-        "id": 14,
-        "name": "Lakers"
+        "division": "Southwest",
+        "full_name": "Houston Rockets",
+        "id": 11,
+        "name": "Rockets"
     },
-    "weight_pounds": 250
+    "weight_pounds": null
 }
