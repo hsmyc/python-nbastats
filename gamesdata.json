@@ -1,0 +1,466 @@
+[
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "CHA",
+            "city": "Charlotte",
+            "conference": "East",
+            "division": "Southeast",
+            "full_name": "Charlotte Hornets",
+            "id": 4,
+            "name": "Hornets"
+        },
+        "home_team_score": 121,
+        "id": 1037786,
+        "period": 5,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "BOS",
+            "city": "Boston",
+            "conference": "East",
+            "division": "Atlantic",
+            "full_name": "Boston Celtics",
+            "id": 2,
+            "name": "Celtics"
+        },
+        "visitor_team_score": 118
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "DET",
+            "city": "Detroit",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Detroit Pistons",
+            "id": 9,
+            "name": "Pistons"
+        },
+        "home_team_score": 103,
+        "id": 1037787,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "DEN",
+            "city": "Denver",
+            "conference": "West",
+            "division": "Northwest",
+            "full_name": "Denver Nuggets",
+            "id": 8,
+            "name": "Nuggets"
+        },
+        "visitor_team_score": 107
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "WAS",
+            "city": "Washington",
+            "conference": "East",
+            "division": "Southeast",
+            "full_name": "Washington Wizards",
+            "id": 30,
+            "name": "Wizards"
+        },
+        "home_team_score": 129,
+        "id": 1037788,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "MIL",
+            "city": "Milwaukee",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Milwaukee Bucks",
+            "id": 17,
+            "name": "Bucks"
+        },
+        "visitor_team_score": 142
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "CHI",
+            "city": "Chicago",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Chicago Bulls",
+            "id": 5,
+            "name": "Bulls"
+        },
+        "home_team_score": 100,
+        "id": 1037789,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "MIA",
+            "city": "Miami",
+            "conference": "East",
+            "division": "Southeast",
+            "full_name": "Miami Heat",
+            "id": 16,
+            "name": "Heat"
+        },
+        "visitor_team_score": 118
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "MIN",
+            "city": "Minnesota",
+            "conference": "West",
+            "division": "Northwest",
+            "full_name": "Minnesota Timberwolves",
+            "id": 18,
+            "name": "Timberwolves"
+        },
+        "home_team_score": 117,
+        "id": 1037790,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "NYK",
+            "city": "New York",
+            "conference": "East",
+            "division": "Atlantic",
+            "full_name": "New York Knicks",
+            "id": 20,
+            "name": "Knicks"
+        },
+        "visitor_team_score": 100
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "NOP",
+            "city": "New Orleans",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "New Orleans Pelicans",
+            "id": 19,
+            "name": "Pelicans"
+        },
+        "home_team_score": 129,
+        "id": 1037791,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "SAC",
+            "city": "Sacramento",
+            "conference": "West",
+            "division": "Pacific",
+            "full_name": "Sacramento Kings",
+            "id": 26,
+            "name": "Kings"
+        },
+        "visitor_team_score": 93
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "SAS",
+            "city": "San Antonio",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "San Antonio Spurs",
+            "id": 27,
+            "name": "Spurs"
+        },
+        "home_team_score": 99,
+        "id": 1037792,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "LAC",
+            "city": "LA",
+            "conference": "West",
+            "division": "Pacific",
+            "full_name": "LA Clippers",
+            "id": 13,
+            "name": "Clippers"
+        },
+        "visitor_team_score": 124
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "GSW",
+            "city": "Golden State",
+            "conference": "West",
+            "division": "Pacific",
+            "full_name": "Golden State Warriors",
+            "id": 10,
+            "name": "Warriors"
+        },
+        "home_team_score": 121,
+        "id": 1037793,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "HOU",
+            "city": "Houston",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "Houston Rockets",
+            "id": 11,
+            "name": "Rockets"
+        },
+        "visitor_team_score": 116
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "CHA",
+            "city": "Charlotte",
+            "conference": "East",
+            "division": "Southeast",
+            "full_name": "Charlotte Hornets",
+            "id": 4,
+            "name": "Hornets"
+        },
+        "home_team_score": 121,
+        "id": 1037786,
+        "period": 5,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "BOS",
+            "city": "Boston",
+            "conference": "East",
+            "division": "Atlantic",
+            "full_name": "Boston Celtics",
+            "id": 2,
+            "name": "Celtics"
+        },
+        "visitor_team_score": 118
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "DET",
+            "city": "Detroit",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Detroit Pistons",
+            "id": 9,
+            "name": "Pistons"
+        },
+        "home_team_score": 103,
+        "id": 1037787,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "DEN",
+            "city": "Denver",
+            "conference": "West",
+            "division": "Northwest",
+            "full_name": "Denver Nuggets",
+            "id": 8,
+            "name": "Nuggets"
+        },
+        "visitor_team_score": 107
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "WAS",
+            "city": "Washington",
+            "conference": "East",
+            "division": "Southeast",
+            "full_name": "Washington Wizards",
+            "id": 30,
+            "name": "Wizards"
+        },
+        "home_team_score": 129,
+        "id": 1037788,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "MIL",
+            "city": "Milwaukee",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Milwaukee Bucks",
+            "id": 17,
+            "name": "Bucks"
+        },
+        "visitor_team_score": 142
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "CHI",
+            "city": "Chicago",
+            "conference": "East",
+            "division": "Central",
+            "full_name": "Chicago Bulls",
+            "id": 5,
+            "name": "Bulls"
+        },
+        "home_team_score": 100,
+        "id": 1037789,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "MIA",
+            "city": "Miami",
+            "conference": "East",
+            "division": "Southeast",
+            "full_name": "Miami Heat",
+            "id": 16,
+            "name": "Heat"
+        },
+        "visitor_team_score": 118
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "MIN",
+            "city": "Minnesota",
+            "conference": "West",
+            "division": "Northwest",
+            "full_name": "Minnesota Timberwolves",
+            "id": 18,
+            "name": "Timberwolves"
+        },
+        "home_team_score": 117,
+        "id": 1037790,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "NYK",
+            "city": "New York",
+            "conference": "East",
+            "division": "Atlantic",
+            "full_name": "New York Knicks",
+            "id": 20,
+            "name": "Knicks"
+        },
+        "visitor_team_score": 100
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "NOP",
+            "city": "New Orleans",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "New Orleans Pelicans",
+            "id": 19,
+            "name": "Pelicans"
+        },
+        "home_team_score": 129,
+        "id": 1037791,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "SAC",
+            "city": "Sacramento",
+            "conference": "West",
+            "division": "Pacific",
+            "full_name": "Sacramento Kings",
+            "id": 26,
+            "name": "Kings"
+        },
+        "visitor_team_score": 93
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "SAS",
+            "city": "San Antonio",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "San Antonio Spurs",
+            "id": 27,
+            "name": "Spurs"
+        },
+        "home_team_score": 99,
+        "id": 1037792,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "LAC",
+            "city": "LA",
+            "conference": "West",
+            "division": "Pacific",
+            "full_name": "LA Clippers",
+            "id": 13,
+            "name": "Clippers"
+        },
+        "visitor_team_score": 124
+    },
+    {
+        "date": "2023-11-20T00:00:00.000Z",
+        "home_team": {
+            "abbreviation": "GSW",
+            "city": "Golden State",
+            "conference": "West",
+            "division": "Pacific",
+            "full_name": "Golden State Warriors",
+            "id": 10,
+            "name": "Warriors"
+        },
+        "home_team_score": 121,
+        "id": 1037793,
+        "period": 4,
+        "postseason": false,
+        "season": 2023,
+        "status": "Final",
+        "time": "Final",
+        "visitor_team": {
+            "abbreviation": "HOU",
+            "city": "Houston",
+            "conference": "West",
+            "division": "Southwest",
+            "full_name": "Houston Rockets",
+            "id": 11,
+            "name": "Rockets"
+        },
+        "visitor_team_score": 116
+    }
+]

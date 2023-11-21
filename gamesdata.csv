@@ -1,0 +1,17 @@
+id,date,home_team_id,home_team_score,period,postseason,season,status,time,visitor_team_id,visitor_team_score
+1037786,2023-11-20T00:00:00.000Z,Charlotte Hornets,4,121,5,False,2023,Final,Final,Boston Celtics,2,118
+1037787,2023-11-20T00:00:00.000Z,Detroit Pistons,9,103,4,False,2023,Final,Final,Denver Nuggets,8,107
+1037788,2023-11-20T00:00:00.000Z,Washington Wizards,30,129,4,False,2023,Final,Final,Milwaukee Bucks,17,142
+1037789,2023-11-20T00:00:00.000Z,Chicago Bulls,5,100,4,False,2023,Final,Final,Miami Heat,16,118
+1037790,2023-11-20T00:00:00.000Z,Minnesota Timberwolves,18,117,4,False,2023,Final,Final,New York Knicks,20,100
+1037791,2023-11-20T00:00:00.000Z,New Orleans Pelicans,19,129,4,False,2023,Final,Final,Sacramento Kings,26,93
+1037792,2023-11-20T00:00:00.000Z,San Antonio Spurs,27,99,4,False,2023,Final,Final,LA Clippers,13,124
+1037793,2023-11-20T00:00:00.000Z,Golden State Warriors,10,121,4,False,2023,Final,Final,Houston Rockets,11,116
+1037786,2023-11-20T00:00:00.000Z,Charlotte Hornets,4,121,5,False,2023,Final,Final,Boston Celtics,2,118
+1037787,2023-11-20T00:00:00.000Z,Detroit Pistons,9,103,4,False,2023,Final,Final,Denver Nuggets,8,107
+1037788,2023-11-20T00:00:00.000Z,Washington Wizards,30,129,4,False,2023,Final,Final,Milwaukee Bucks,17,142
+1037789,2023-11-20T00:00:00.000Z,Chicago Bulls,5,100,4,False,2023,Final,Final,Miami Heat,16,118
+1037790,2023-11-20T00:00:00.000Z,Minnesota Timberwolves,18,117,4,False,2023,Final,Final,New York Knicks,20,100
+1037791,2023-11-20T00:00:00.000Z,New Orleans Pelicans,19,129,4,False,2023,Final,Final,Sacramento Kings,26,93
+1037792,2023-11-20T00:00:00.000Z,San Antonio Spurs,27,99,4,False,2023,Final,Final,LA Clippers,13,124
+1037793,2023-11-20T00:00:00.000Z,Golden State Warriors,10,121,4,False,2023,Final,Final,Houston Rockets,11,116
