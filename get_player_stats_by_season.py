@@ -5,10 +5,9 @@
 import json
 import csv
 import requests
-from find_player_id import find_player_id
 
 
-def get_player_stats_by_season(first_name: str, last_name: str, team: str, season: str, player_id: int):
+def get_player_stats_by_season(season: str, player_id: int):
     if player_id is None:
         return None
     response = requests.get(
