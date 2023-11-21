@@ -5,11 +5,9 @@
 import json
 import csv
 import requests
-from find_player_id import find_player_id
 
 
-def get_player_details_by_id(first_name: str, last_name: str, team: str):
-    player_id = find_player_id(first_name, last_name, team)
+def get_player_details_by_id(player_id: int):
     if player_id is None:
         return None
     response = requests.get(
