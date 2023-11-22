@@ -8,7 +8,12 @@ import json
 def main():
     players = dfs_players()
     player_ids = []
-    playerslist = player_search()
+    playerslist = []
+    with open('allplayers.json', 'r') as infile:
+        playerslist = json.load(infile)
+    if len(playerslist) == []:
+        print('No players found. Generating list...')
+        playerslist = player_search()
     print(len(playerslist))
     for number, player in enumerate(players):
         progress = (number / len(players)) * 100
