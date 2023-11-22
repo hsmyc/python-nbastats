@@ -10,6 +10,4 @@ def dfs_players():
 
     players_filtered = response_json['players']['result']
 
-    with open('players.json', 'w', encoding='utf-8') as outfile:
-        json.dump(players_filtered, outfile, sort_keys=True, indent=4)
     return players_filtered
