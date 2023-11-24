@@ -21,7 +21,7 @@ def get_stats_by_game(game_ids: int):
         response = requests.get(
             "https://www.balldontlie.io/api/v1/stats",
             params=parameters,
-            timeout=5)
+            timeout=20)
         response_json = response.json()
         all_stats.extend(response_json['data'])
 

@@ -15,7 +15,6 @@ def main():
     end_date = input('Enter end date (YYYY-MM-DD): ')
     if os.path.exists('allplayers.json'):
         with open('allplayers.json', 'r') as infile:
-
             if os.path.getsize('allplayers.json') > 0:
                 playerslist = json.load(infile)
             else:
@@ -36,7 +35,6 @@ def main():
         sys.stdout.flush()
         player_id = find_player_id(player['name'], player['team'], playerslist)
         player_ids.append(player_id)
-
     get_stats_by_date(start_date, end_date, player_ids)
 
 
