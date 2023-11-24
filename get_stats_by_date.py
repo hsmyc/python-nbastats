@@ -1,10 +1,11 @@
-
 import json
 import csv
 import requests
 
 
 def get_stats_by_date(start_date: str, end_date: str, player_id: int):
+    print(player_id)
+    print('Getting stats...')
     parameters = {
         'start_date': start_date,
         'end_date': end_date,
@@ -15,9 +16,11 @@ def get_stats_by_date(start_date: str, end_date: str, player_id: int):
         "https://www.balldontlie.io/api/v1/stats",
         params=parameters,
         timeout=5)
+    print('sta: ', response.status_code)
     response_json: dict = response.json()
     all_stats = response_json['data']
     total_pages = response_json['meta']['total_pages']
+    print(f'Total pages: {total_pages}')
     while total_pages >= parameters['page']:
         parameters['page'] += 1
         response = requests.get(
@@ -41,4 +44,5 @@ def get_stats_by_date(start_date: str, end_date: str, player_id: int):
                              data[i]['ft_pct'], data[i]['fta'], data[i]['ftm'], data[i]['game']['id'], data[i]['min'],
                              data[i]['oreb'], data[i]['pf'], data[i]['player']['id'], data[i]['pts'], data[i]['reb'],
                              data[i]['stl'], data[i]['team']['id'], data[i]['turnover']])
+    print('Stats saved to statsdata.json and statsdata.csv')
     return all_stats
