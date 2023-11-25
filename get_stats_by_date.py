@@ -10,7 +10,7 @@ def get_stats_by_date(start_date: str, end_date: str, player_id: int):
     parameters = {
         'start_date': start_date,
         'end_date': end_date,
-        'page': 0,
+        'page': 1,
         'player_ids[]': player_id,
     }
     response = requests.get(
@@ -36,16 +36,47 @@ def get_stats_by_date(start_date: str, end_date: str, player_id: int):
     with open('statsdata.json', 'r', encoding='utf-8') as f:
         data = json.load(f)
     with open('statsdata.csv', 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(['id', 'name', 'ast', 'blk', 'dreb', 'fg3_pct', 'fg3a', 'fg3m', 'fg_pct', 'fga', 'fgm', 'ft_pct',
-                         'fta', 'ftm', 'game_id', 'min', 'oreb', 'pf', 'player_id', 'pts', 'reb', 'stl', 'team_id',
-                         'turnover'])
-        for i in range(len(data)):
-            writer.writerow([data[i]['id'], data[i]['player']['first_name'] +
-                             data[i]['player']['last_name'], data[i]['ast'], data[i]['blk'], data[i]['dreb'], data[i]['fg3_pct'],
-                             data[i]['fg3a'], data[i]['fg3m'], data[i]['fg_pct'], data[i]['fga'], data[i]['fgm'],
-                             data[i]['ft_pct'], data[i]['fta'], data[i]['ftm'], data[i]['game']['id'], data[i]['min'],
-                             data[i]['oreb'], data[i]['pf'], data[i]['player']['id'], data[i]['pts'], data[i]['reb'],
-                             data[i]['stl'], data[i]['team']['id'], data[i]['turnover']])
+        fieldnames = [
+            'name', 'id', 'ast', 'blk', 'dreb', 'fg3_pct', 'fg3a', 'fg3m', 'fg_pct', 'fga', 'fgm', 'ft_pct', 'fta', 'ftm',
+            'game_id', 'game_date', 'home_team_id', 'home_team_score', 'visitor_team_id', 'visitor_team_score',
+            'min', 'oreb', 'pf',  'pts', 'reb', 'stl',
+            'team_id', 'team_abbreviation', 'turnover'
+        ]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for item in all_stats:
+            row = {
+                'name': item['player']['first_name']+" " + item['player']['last_name'],
+                'id': item['player']['id'],
+                'ast': item['ast'],
+                'blk': item['blk'],
+                'dreb': item['dreb'],
+                'fg3_pct': item['fg3_pct'],
+                'fg3a': item['fg3a'],
+                'fg3m': item['fg3m'],
+                'fg_pct': item['fg_pct'],
+                'fga': item['fga'],
+                'fgm': item['fgm'],
+                'ft_pct': item['ft_pct'],
+                'fta': item['fta'],
+                'ftm': item['ftm'],
+                'game_id': item['game']['id'],
+                'game_date': item['game']['date'],
+                'home_team_id': item['game']['home_team_id'],
+                'home_team_score': item['game']['home_team_score'],
+                'visitor_team_id': item['game']['visitor_team_id'],
+                'visitor_team_score': item['game']['visitor_team_score'],
+                'min': item['min'],
+                'oreb': item['oreb'],
+                'pf': item['pf'],
+                'pts': item['pts'],
+                'reb': item['reb'],
+                'stl': item['stl'],
+                'team_id': item['team']['id'],
+                'team_abbreviation': item['team']['abbreviation'],
+                'turnover': item['turnover']
+            }
+            writer.writerow(row)
     print('Stats saved to statsdata.json and statsdata.csv')
     return all_stats

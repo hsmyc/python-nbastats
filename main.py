@@ -2,9 +2,11 @@ from find_player_id import find_player_id
 from get_daily_player_list import dfs_players
 from get_all_players import player_search
 from get_stats_by_date import get_stats_by_date
+from creating_chart import create_chart
 import sys
 import json
 import os
+import time
 
 
 def main():
@@ -36,6 +38,11 @@ def main():
         player_id = find_player_id(player['name'], player['team'], playerslist)
         player_ids.append(player_id)
     get_stats_by_date(start_date, end_date, player_ids)
+
+    print('\nDone!')
+    print('Generating chart...')
+    time.sleep(2)
+    create_chart()
 
 
 if __name__ == '__main__':
