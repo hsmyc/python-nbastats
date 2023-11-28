@@ -4,12 +4,46 @@ import requests
 
 def get_teams_rank():
     print('Getting teams rank...')
-    url = 'https://stats.nba.com/stats/leaguedashteamstats?Conference=&DateFrom=&DateTo=&Division=&GameScope=&GameSegment=&Height=&ISTRound=&LastNGames=0&LeagueID=00&Location=&MeasureType=Opponent&Month=0&OpponentTeamID=0&Outcome=&PORound=0&PaceAdjust=N&PerMode=PerGame&Period=0&PlayerExperience=&PlayerPosition=&PlusMinus=N&Rank=N&Season=2023-24&SeasonSegment=&SeasonType=Regular%20Season&ShotClockRange=&StarterBench=&TeamID=0&TwoWay=0&VsConference=&VsDivision='
+    url = 'https://stats.nba.com/stats/leaguedashteamstats'
+    params = {
+        'Conference': '',
+        'DateFrom': '',
+        'DateTo': '',
+        'Division': '',
+        'GameScope': '',
+        'GameSegment': '',
+        'Height': '',
+        'ISTRound': '',
+        'LastNGames': '0',
+        'LeagueID': '00',
+        'Location': '',
+        'MeasureType': 'Opponent',
+        'Month': '0',
+        'OpponentTeamID': '0',
+        'Outcome': '',
+        'PORound': '0',
+        'PaceAdjust': 'N',
+        'PerMode': 'PerGame',
+        'Period': '0',
+        'PlayerExperience': '',
+        'PlayerPosition': '',
+        'PlusMinus': 'N',
+        'Rank': 'N',
+        'Season': '2023-24',
+        'SeasonSegment': '',
+        'SeasonType': 'Regular Season',
+        'ShotClockRange': '',
+        'StarterBench': '',
+        'TeamID': '0',
+        'TwoWay': '0',
+        'VsConference': '',
+        'VsDivision': ''
+    }
     headers = {
         'Referer': 'https://www.nba.com/',
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
     }
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, params=params)
     response_json: dict = response.json()
     result_sets = response_json['resultSets']
     headers = result_sets[0]['headers']
