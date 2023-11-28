@@ -2,7 +2,7 @@ import csv
 import requests
 
 
-def get_teams_rank(team_id):
+def get_teams_rank():
     url = 'https://stats.nba.com/stats/leaguedashteamstats'
     params = {
         'Conference': '',
@@ -33,7 +33,7 @@ def get_teams_rank(team_id):
         'SeasonType': 'Regular Season',
         'ShotClockRange': '',
         'StarterBench': '',
-        'TeamID': team_id,
+        'TeamID': '0',
         'TwoWay': '0',
         'VsConference': '',
         'VsDivision': ''
@@ -125,4 +125,5 @@ def get_teams_rank(team_id):
                 "TEAM_OPP_PTS_RANK": row[headers.index('OPP_PTS_RANK')],
                 "TEAM_PLUS_MINUS_RANK": row[headers.index('PLUS_MINUS_RANK')]
             })
+
     return team_rank
