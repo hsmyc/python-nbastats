@@ -2,8 +2,7 @@ import csv
 import requests
 
 
-def get_teams_rank():
-    print('Getting teams rank...')
+def get_teams_rank(team_id):
     url = 'https://stats.nba.com/stats/leaguedashteamstats'
     params = {
         'Conference': '',
@@ -34,7 +33,7 @@ def get_teams_rank():
         'SeasonType': 'Regular Season',
         'ShotClockRange': '',
         'StarterBench': '',
-        'TeamID': '0',
+        'TeamID': team_id,
         'TwoWay': '0',
         'VsConference': '',
         'VsDivision': ''
@@ -48,30 +47,31 @@ def get_teams_rank():
     result_sets = response_json['resultSets']
     headers = result_sets[0]['headers']
     rows = result_sets[0]['rowSet']
+    team_rank = []
     with open('teamrank.csv', 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = [
             "TEAM_ID",
             "TEAM_NAME",
-            "GP",
-            "W",
-            "L",
-            "W_PCT",
-            "PLUS_MINUS",
-            "W_PCT_RANK",
-            "OPP_FG_PCT_RANK",
-            "OPP_FG3M_RANK",
-            "OPP_FG3_PCT_RANK",
-            "OPP_FT_PCT_RANK",
-            "OPP_REB_RANK",
-            "OPP_AST_RANK",
-            "OPP_TOV_RANK",
-            "OPP_STL_RANK",
-            "OPP_BLK_RANK",
-            "OPP_BLKA_RANK",
-            "OPP_PF_RANK",
-            "OPP_PFD_RANK",
-            "OPP_PTS_RANK",
-            "PLUS_MINUS_RANK"
+            "TEAM_GP",
+            "TEAM_W",
+            "TEAM_L",
+            "TEAM_W_PCT",
+            "TEAM_PLUS_MINUS",
+            "TEAM_W_PCT_RANK",
+            "TEAM_OPP_FG_PCT_RANK",
+            "TEAM_OPP_FG3M_RANK",
+            "TEAM_OPP_FG3_PCT_RANK",
+            "TEAM_OPP_FT_PCT_RANK",
+            "TEAM_OPP_REB_RANK",
+            "TEAM_OPP_AST_RANK",
+            "TEAM_OPP_TOV_RANK",
+            "TEAM_OPP_STL_RANK",
+            "TEAM_OPP_BLK_RANK",
+            "TEAM_OPP_BLKA_RANK",
+            "TEAM_OPP_PF_RANK",
+            "TEAM_OPP_PFD_RANK",
+            "TEAM_OPP_PTS_RANK",
+            "TEAM_PLUS_MINUS_RANK"
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -79,29 +79,50 @@ def get_teams_rank():
             writer.writerow({
                 "TEAM_ID": row[headers.index('TEAM_ID')],
                 "TEAM_NAME": row[headers.index('TEAM_NAME')],
-                "GP": row[headers.index('GP')],
-                "W": row[headers.index('W')],
-                "L": row[headers.index('L')],
-                "W_PCT": row[headers.index('W_PCT')],
-                "PLUS_MINUS": row[headers.index('PLUS_MINUS')],
-                "W_PCT_RANK": row[headers.index('W_PCT_RANK')],
-                "OPP_FG_PCT_RANK": row[headers.index('OPP_FG_PCT_RANK')],
-                "OPP_FG3M_RANK": row[headers.index('OPP_FG3M_RANK')],
-                "OPP_FG3_PCT_RANK": row[headers.index('OPP_FG3_PCT_RANK')],
-                "OPP_FT_PCT_RANK": row[headers.index('OPP_FT_PCT_RANK')],
-                "OPP_REB_RANK": row[headers.index('OPP_REB_RANK')],
-                "OPP_AST_RANK": row[headers.index('OPP_AST_RANK')],
-                "OPP_TOV_RANK": row[headers.index('OPP_TOV_RANK')],
-                "OPP_STL_RANK": row[headers.index('OPP_STL_RANK')],
-                "OPP_BLK_RANK": row[headers.index('OPP_BLK_RANK')],
-                "OPP_BLKA_RANK": row[headers.index('OPP_BLKA_RANK')],
-                "OPP_PF_RANK": row[headers.index('OPP_PF_RANK')],
-                "OPP_PFD_RANK": row[headers.index('OPP_PFD_RANK')],
-                "OPP_PTS_RANK": row[headers.index('OPP_PTS_RANK')],
-                "PLUS_MINUS_RANK": row[headers.index('PLUS_MINUS_RANK')]
+                "TEAM_GP": row[headers.index('GP')],
+                "TEAM_W": row[headers.index('W')],
+                "TEAM_L": row[headers.index('L')],
+                "TEAM_W_PCT": row[headers.index('W_PCT')],
+                "TEAM_PLUS_MINUS": row[headers.index('PLUS_MINUS')],
+                "TEAM_W_PCT_RANK": row[headers.index('W_PCT_RANK')],
+                "TEAM_OPP_FG_PCT_RANK": row[headers.index('OPP_FG_PCT_RANK')],
+                "TEAM_OPP_FG3M_RANK": row[headers.index('OPP_FG3M_RANK')],
+                "TEAM_OPP_FG3_PCT_RANK": row[headers.index('OPP_FG3_PCT_RANK')],
+                "TEAM_OPP_FT_PCT_RANK": row[headers.index('OPP_FT_PCT_RANK')],
+                "TEAM_OPP_REB_RANK": row[headers.index('OPP_REB_RANK')],
+                "TEAM_OPP_AST_RANK": row[headers.index('OPP_AST_RANK')],
+                "TEAM_OPP_TOV_RANK": row[headers.index('OPP_TOV_RANK')],
+                "TEAM_OPP_STL_RANK": row[headers.index('OPP_STL_RANK')],
+                "TEAM_OPP_BLK_RANK": row[headers.index('OPP_BLK_RANK')],
+                "TEAM_OPP_BLKA_RANK": row[headers.index('OPP_BLKA_RANK')],
+                "TEAM_OPP_PF_RANK": row[headers.index('OPP_PF_RANK')],
+                "TEAM_OPP_PFD_RANK": row[headers.index('OPP_PFD_RANK')],
+                "TEAM_OPP_PTS_RANK": row[headers.index('OPP_PTS_RANK')],
+                "TEAM_PLUS_MINUS_RANK": row[headers.index('PLUS_MINUS_RANK')]
             })
 
-    print('Done!')
-
-
-get_teams_rank()
+            team_rank.append({
+                "TEAM_ID": row[headers.index('TEAM_ID')],
+                "TEAM_NAME": row[headers.index('TEAM_NAME')],
+                "TEAM_GP": row[headers.index('GP')],
+                "TEAM_W": row[headers.index('W')],
+                "TEAM_L": row[headers.index('L')],
+                "TEAM_W_PCT": row[headers.index('W_PCT')],
+                "TEAM_PLUS_MINUS": row[headers.index('PLUS_MINUS')],
+                "TEAM_W_PCT_RANK": row[headers.index('W_PCT_RANK')],
+                "TEAM_OPP_FG_PCT_RANK": row[headers.index('OPP_FG_PCT_RANK')],
+                "TEAM_OPP_FG3M_RANK": row[headers.index('OPP_FG3M_RANK')],
+                "TEAM_OPP_FG3_PCT_RANK": row[headers.index('OPP_FG3_PCT_RANK')],
+                "TEAM_OPP_FT_PCT_RANK": row[headers.index('OPP_FT_PCT_RANK')],
+                "TEAM_OPP_REB_RANK": row[headers.index('OPP_REB_RANK')],
+                "TEAM_OPP_AST_RANK": row[headers.index('OPP_AST_RANK')],
+                "TEAM_OPP_TOV_RANK": row[headers.index('OPP_TOV_RANK')],
+                "TEAM_OPP_STL_RANK": row[headers.index('OPP_STL_RANK')],
+                "TEAM_OPP_BLK_RANK": row[headers.index('OPP_BLK_RANK')],
+                "TEAM_OPP_BLKA_RANK": row[headers.index('OPP_BLKA_RANK')],
+                "TEAM_OPP_PF_RANK": row[headers.index('OPP_PF_RANK')],
+                "TEAM_OPP_PFD_RANK": row[headers.index('OPP_PFD_RANK')],
+                "TEAM_OPP_PTS_RANK": row[headers.index('OPP_PTS_RANK')],
+                "TEAM_PLUS_MINUS_RANK": row[headers.index('PLUS_MINUS_RANK')]
+            })
+    return team_rank

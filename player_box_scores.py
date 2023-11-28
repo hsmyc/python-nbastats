@@ -2,19 +2,44 @@ import requests
 import csv
 
 
-def player_box_scores(player_ids: str, date: str):
+def player_box_scores(player_infos, player_team_infos):
     all_players_box_scores = []
     with open('all_players_box.csv', 'w', newline='', encoding='utf-8') as csvfile:
         fieldnames = [
-            "SEASON_ID", "Player_ID", "Game_ID", "GAME_DATE", "MATCHUP", "WL", "MIN",
+            'PLAYER_NAME', "TEAM_ABBREVIATION", "SEASON_ID", "Player_ID", "Game_ID", "GAME_DATE", "MATCHUP", "WL", "MIN",
             "FGM", "FGA", "FG_PCT", "FG3M", "FG3A", "FG3_PCT", "FTM", "FTA", "FT_PCT",
             "OREB", "DREB", "REB", "AST", "STL", "BLK", "TOV", "PF", "PTS",
-            "PLUS_MINUS", "VIDEO_AVAILABLE"
+            "PLUS_MINUS", "VIDEO_AVAILABLE",  "TEAM_NAME", "TEAM_GP",
+            "TEAM_W",
+            "TEAM_L",
+            "TEAM_W_PCT",
+            "TEAM_PLUS_MINUS",
+            "TEAM_W_PCT_RANK",
+            "TEAM_OPP_FG_PCT_RANK",
+            "TEAM_OPP_FG3M_RANK",
+            "TEAM_OPP_FG3_PCT_RANK",
+            "TEAM_OPP_FT_PCT_RANK",
+            "TEAM_OPP_REB_RANK",
+            "TEAM_OPP_AST_RANK",
+            "TEAM_OPP_TOV_RANK",
+            "TEAM_OPP_STL_RANK",
+            "TEAM_OPP_BLK_RANK",
+            "TEAM_OPP_BLKA_RANK",
+            "TEAM_OPP_PF_RANK",
+            "TEAM_OPP_PFD_RANK",
+            "TEAM_OPP_PTS_RANK",
+            "TEAM_PLUS_MINUS_RANK"
         ]
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-        for player_id in player_ids:
+        for player_info in player_infos:
+            player_team_info = None
+            for player_team in player_team_infos:
+                if player_team['TEAM_ID'] == player_info['team_id']:
+                    player_team_info = player_team
+                    break
+            player_id = player_info['id']
             print(f'Getting box score for player {player_id}...')
             url = f'https://stats.nba.com/stats/playergamelog?DateFrom=&DateTo=&LeagueID=00&PlayerID={player_id}&Season=2023-24&SeasonType=Regular%20Season'
             headers = {
@@ -32,6 +57,8 @@ def player_box_scores(player_ids: str, date: str):
 
             for row in rows:
                 player_data = {
+                    "PLAYER_NAME": player_info['name'],
+                    "TEAM_ABBREVIATION": player_info['team'],
                     "SEASON_ID": row[headers.index('SEASON_ID')],
                     "Player_ID": row[headers.index('Player_ID')],
                     "Game_ID": row[headers.index('Game_ID')],
@@ -58,8 +85,28 @@ def player_box_scores(player_ids: str, date: str):
                     "PF": row[headers.index('PF')],
                     "PTS": row[headers.index('PTS')],
                     "PLUS_MINUS": row[headers.index('PLUS_MINUS')],
-                    "VIDEO_AVAILABLE": row[headers.index('VIDEO_AVAILABLE')]
-                }
+                    "VIDEO_AVAILABLE": row[headers.index('VIDEO_AVAILABLE')],
+                    "TEAM_NAME": player_team_info['TEAM_NAME'],
+                    "TEAM_GP": player_team_info['TEAM_GP'],
+                    "TEAM_W": player_team_info['TEAM_W'],
+                    "TEAM_L": player_team_info['TEAM_L'],
+                    "TEAM_W_PCT": player_team_info['TEAM_W_PCT'],
+                    "TEAM_PLUS_MINUS": player_team_info['TEAM_PLUS_MINUS'],
+                    "TEAM_W_PCT_RANK": player_team_info['TEAM_W_PCT_RANK'],
+                    "TEAM_OPP_FG_PCT_RANK": player_team_info['TEAM_OPP_FG_PCT_RANK'],
+                    "TEAM_OPP_FG3M_RANK": player_team_info['TEAM_OPP_FG3M_RANK'],
+                    "TEAM_OPP_FG3_PCT_RANK": player_team_info['TEAM_OPP_FG3_PCT_RANK'],
+                    "TEAM_OPP_FT_PCT_RANK": player_team_info['TEAM_OPP_FT_PCT_RANK'],
+                    "TEAM_OPP_REB_RANK": player_team_info['TEAM_OPP_REB_RANK'],
+                    "TEAM_OPP_AST_RANK": player_team_info['TEAM_OPP_AST_RANK'],
+                    "TEAM_OPP_TOV_RANK": player_team_info['TEAM_OPP_TOV_RANK'],
+                    "TEAM_OPP_STL_RANK": player_team_info['TEAM_OPP_STL_RANK'],
+                    "TEAM_OPP_BLK_RANK": player_team_info['TEAM_OPP_BLK_RANK'],
+                    "TEAM_OPP_BLKA_RANK": player_team_info['TEAM_OPP_BLKA_RANK'],
+                    "TEAM_OPP_PF_RANK": player_team_info['TEAM_OPP_PF_RANK'],
+                    "TEAM_OPP_PFD_RANK": player_team_info['TEAM_OPP_PFD_RANK'],
+                    "TEAM_OPP_PTS_RANK": player_team_info['TEAM_OPP_PTS_RANK'],
+                    "TEAM_PLUS_MINUS_RANK": player_team_info['TEAM_PLUS_MINUS_RANK']}
                 all_players_box_scores.append(player_data)
         writer.writerows(all_players_box_scores)
 

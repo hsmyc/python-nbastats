@@ -3,7 +3,7 @@ import requests
 
 
 def all_player_info():
-    print('Getting all player IDs...')
+    print('Getting all player Info...')
     url = 'https://stats.nba.com/stats/playerindex?College=&Country=&DraftPick=&DraftRound=&DraftYear=&Height=&Historical=1&LeagueID=00&Season=2023-24&SeasonType=Regular%20Season&TeamID=0&Weight='
     headers = {
         'Referer': 'https://www.nba.com/',
@@ -41,5 +41,5 @@ def all_player_info():
                 "TEAM_NAME": row[headers.index('TEAM_NAME')],
                 "TEAM_ABBREVIATION": row[headers.index('TEAM_ABBREVIATION')],
             })
-    print('Done!')
+    print('All player Infos saved to allplayers.csv')
     return all_players
