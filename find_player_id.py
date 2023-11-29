@@ -9,6 +9,9 @@ def find_player_id(name: str, team: str, players: list):
         team = 'SAS'
     if team == 'GS':
         team = 'GSW'
+    if team == 'PHO':
+        team = 'PHX'
+
     info = {
         'id': None,
         'name': None,
@@ -35,5 +38,4 @@ def find_player_id(name: str, team: str, players: list):
     if info['id'] is None:
         print(f'Could not find player {name} on team {team}')
         return None
-
     return info

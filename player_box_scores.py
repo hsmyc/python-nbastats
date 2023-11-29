@@ -38,8 +38,11 @@ def player_box_scores(player_infos, player_team_infos):
             for player_team in player_team_infos:
                 if player_team['TEAM_ID'] == player_info['team_id']:
                     player_team_info = player_team
-                else:
-                    print(f'no team info for player {player_info["name"]}')
+                    break
+            if player_team_info is None:
+                print(
+                    f'Error getting team info for player {player_info["id"]}')
+                continue
             player_id = player_info['id']
             print(f'Getting box score for player {player_id}...')
             url = f'https://stats.nba.com/stats/playergamelog?DateFrom=&DateTo=&LeagueID=00&PlayerID={player_id}&Season=2023-24&SeasonType=Regular%20Season'

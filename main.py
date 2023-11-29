@@ -21,7 +21,7 @@ def main():
             player['name'], player['team'], playerslist)
         if player_info is not None:
             player_infos.append(player_info)
-            player_team_infos = get_teams_rank()
+    player_team_infos = get_teams_rank()
     player_box_scores(player_infos, player_team_infos)
     print('\nDone!')
     # print('Generating chart...')
