@@ -12,3 +12,6 @@ def dfs_players():
     with open('players.json', 'w') as f:
         json.dump(players_filtered, f, indent=4)
     return players_filtered
+
+
+dfs_players()

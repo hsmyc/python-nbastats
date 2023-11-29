@@ -1,17 +1,8 @@
+from utils import check_team_abbr
 
 
 def find_player_id(name: str, team: str, players: list):
-    if team == 'NO':
-        team = 'NOP'
-    if team == 'NY':
-        team = 'NYK'
-    if team == 'SA':
-        team = 'SAS'
-    if team == 'GS':
-        team = 'GSW'
-    if team == 'PHO':
-        team = 'PHX'
-
+    team = check_team_abbr(team)
     info = {
         'id': None,
         'name': None,

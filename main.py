@@ -1,4 +1,4 @@
-from find_player_id import find_player_id
+from find_player_info import find_player_id
 from get_daily_player_list import dfs_players
 from all_player_info import all_player_info
 from player_box_scores import player_box_scores
@@ -8,6 +8,7 @@ import sys
 
 
 def main():
+
     players = dfs_players()
     player_infos = []
     player_team_infos = []
