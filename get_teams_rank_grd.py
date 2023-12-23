@@ -131,6 +131,3 @@ def get_teams_rank_grd():
             )
 
     return team_rank_grd
-
-
-get_teams_rank_grd()

@@ -131,6 +131,3 @@ def get_teams_rank_cnt():
             )
 
     return team_rank_cnt
-
-
-get_teams_rank_cnt()
