@@ -2,7 +2,7 @@ import csv
 import requests
 
 
-def get_teams_rank_grd():
+def get_teams_rank_c():
     url = "https://stats.nba.com/stats/leaguedashteamstats"
     params = {
         "Conference": "",
@@ -25,7 +25,7 @@ def get_teams_rank_grd():
         "PerMode": "PerGame",
         "Period": "0",
         "PlayerExperience": "",
-        "PlayerPosition": "G",
+        "PlayerPosition": "C",
         "PlusMinus": "N",
         "Rank": "N",
         "Season": "2023-24",
@@ -47,8 +47,8 @@ def get_teams_rank_grd():
     result_sets = response_json["resultSets"]
     headers = result_sets[0]["headers"]
     rows = result_sets[0]["rowSet"]
-    team_rank_grd = []
-    with open("teamrankgrd.csv", "w", newline="", encoding="utf-8") as csvfile:
+    team_rank_c = []
+    with open("teamrankc.csv", "w", newline="", encoding="utf-8") as csvfile:
         fieldnames = [
             "TEAM_ID",
             "TEAM_NAME",
@@ -103,7 +103,7 @@ def get_teams_rank_grd():
                 }
             )
 
-            team_rank_grd.append(
+            team_rank_c.append(
                 {
                     "TEAM_ID": row[headers.index("TEAM_ID")],
                     "TEAM_NAME": row[headers.index("TEAM_NAME")],
@@ -130,4 +130,4 @@ def get_teams_rank_grd():
                 }
             )
 
-    return team_rank_grd
+    return team_rank_c

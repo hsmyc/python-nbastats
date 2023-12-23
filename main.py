@@ -3,9 +3,9 @@ from get_daily_player_list import dfs_players
 from all_player_info import all_player_info
 from player_box_scores import player_box_scores
 from get_teams_rank import get_teams_rank
-from get_teams_rank_fwd import get_teams_rank_fwd
-from get_teams_rank_grd import get_teams_rank_grd
-from get_teams_rank_cnt import get_teams_rank_cnt
+from get_teams_rank_f import get_teams_rank_f
+from get_teams_rank_g import get_teams_rank_g
+from get_teams_rank_c import get_teams_rank_c
 from creating_chart import create_chart
 from player_last_match import player_last_match
 import sys
@@ -27,9 +27,9 @@ def main():
         if player_info is not None:
             player_infos.append(player_info)
     player_team_infos = get_teams_rank()
-    player_team_infos_fwd = get_teams_rank_fwd()
-    player_team_infos_fwd = get_teams_rank_grd()
-    player_team_infos_fwd = get_teams_rank_cnt()
+    player_team_infos_f = get_teams_rank_f()
+    player_team_infos_g = get_teams_rank_g()
+    player_team_infos_c = get_teams_rank_c()
     player_data = player_box_scores(player_infos, player_team_infos)
 
     player_last_match("Bam Adebayo", player_data, opponent_team)
