@@ -2,7 +2,7 @@ import csv
 import requests
 
 
-def get_teams_rank_fwd():
+def get_teams_rank_cnt():
     url = "https://stats.nba.com/stats/leaguedashteamstats"
     params = {
         "Conference": "",
@@ -25,7 +25,7 @@ def get_teams_rank_fwd():
         "PerMode": "PerGame",
         "Period": "0",
         "PlayerExperience": "",
-        "PlayerPosition": "F",
+        "PlayerPosition": "C",
         "PlusMinus": "N",
         "Rank": "N",
         "Season": "2023-24",
@@ -47,8 +47,8 @@ def get_teams_rank_fwd():
     result_sets = response_json["resultSets"]
     headers = result_sets[0]["headers"]
     rows = result_sets[0]["rowSet"]
-    team_rank_fwd = []
-    with open("teamrankfwd.csv", "w", newline="", encoding="utf-8") as csvfile:
+    team_rank_cnt = []
+    with open("teamrankcnt.csv", "w", newline="", encoding="utf-8") as csvfile:
         fieldnames = [
             "TEAM_ID",
             "TEAM_NAME",
@@ -103,7 +103,7 @@ def get_teams_rank_fwd():
                 }
             )
 
-            team_rank_fwd.append(
+            team_rank_cnt.append(
                 {
                     "TEAM_ID": row[headers.index("TEAM_ID")],
                     "TEAM_NAME": row[headers.index("TEAM_NAME")],
@@ -130,4 +130,7 @@ def get_teams_rank_fwd():
                 }
             )
 
-    return team_rank_fwd
+    return team_rank_cnt
+
+
+get_teams_rank_cnt()
